@@ -1,0 +1,25 @@
+doctype html5
+html(lang='en')
+  head
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no, maximum-scale=1', media='(device-height: 568px)')
+    link(href="../contact.css", rel="stylesheet")
+    title Register for the march
+
+  body
+    #background
+      img#backgroundimage(src="../colorfulbackground.jpg")
+    #form-container
+      h1 Have a question?
+      p Leave us your email address, and send us a message.
+      #review-form
+        form.form(method="post", enctype="application/x-www-form-urlencoded", action="/contact")
+          .row
+            label Email Address
+            br
+            input(type="text", name="email")
+          .row
+            label Message
+            br
+            textarea#longmessage(type="text", name="email")
+          .row
+            button(type="submit") Send!

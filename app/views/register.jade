@@ -1,0 +1,42 @@
+doctype html5
+html(lang='en')
+  head
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no, maximum-scale=1', media='(device-height: 568px)')
+    link(href="register.css", rel="stylesheet")
+    title Register for the march
+
+  body
+    #background
+      img#backgroundimage(src="colorfulbackground.jpg")
+    #form-container
+      h1 Are you coming to the march?
+      p Show your support for the ERA by marching on January 19th
+      #review-form
+        form.form(method="post", enctype="application/x-www-form-urlencoded", action="/save")
+
+          .row
+            label Are you coming as an individual or as a group?
+            br
+            select(name="alone_or_group")
+              option(value="individual") Individual
+              option(value="group") Group
+          .row
+            label What's your name?
+            br
+            input(type="text", name="name")
+          .row
+            label Would you like to volunteer?
+            br
+            select(name="volunteer")
+              option(value="yes") Yes
+              option(value="no") No
+          .row
+            label What's your email address?
+            br
+            input(type="email", name="email")
+          .row
+            label How many people in your group?
+            br
+            input(type="number", name="number_of_people")
+          .row
+            button(type="submit") Register!

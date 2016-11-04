@@ -1,0 +1,132 @@
+body {
+  margin: 0px;
+}
+
+#button {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.bar {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  background-color: black;
+}
+
+#top-bar {
+  top: 0%;
+/*  animation: top-transformation 0.5s;*/
+  animation-fill-mode: forwards;
+}
+
+#mid-bar {
+  top: 40%;
+/*  animation: mid-transformation 0.5s;*/
+  animation-fill-mode: forwards;
+}
+
+#bot-bar {
+  top: 80%;
+/*  animation: bot-transformation 0.5s;*/
+  animation-fill-mode: forwards;
+}
+
+@keyframes top-transformation {
+    from {
+      top: 0%;
+      transform: rotate(0deg);
+    }
+    to {
+      top: 40%;
+      transform: rotate(-45deg);
+    }
+}
+
+@keyframes top-transformationtwo {
+    from {
+      top: 40%;
+      transform: rotate(-45deg);
+    }
+    to {
+      top: 0%;
+      transform: rotate(0deg);
+    }
+}
+
+@keyframes mid-transformation {
+    from {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+}
+
+@keyframes mid-transformationtwo {
+    from {
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+}
+
+@keyframes bot-transformation {
+    from {
+      top: 80%;
+      transform: rotate(0deg);
+    }
+    to {
+      top: 40%;
+      transform: rotate(45deg);
+    }
+}
+
+@keyframes bot-transformationtwo {
+    from {
+      top: 40%;
+      transform: rotate(45deg);
+    }
+    to {
+      top: 80%;
+      transform: rotate(0deg);
+    }
+}
+
+.oddAnimation-top {
+  animation: top-transformation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.evenAnimation-top {
+  animation: top-transformationtwo 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.oddAnimation-mid {
+  animation: mid-transformation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.evenAnimation-mid {
+  animation: mid-transformationtwo 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.oddAnimation-bot {
+  animation: bot-transformation 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.evenAnimation-bot {
+  animation: bot-transformationtwo 0.5s;
+  animation-fill-mode: forwards;
+}
