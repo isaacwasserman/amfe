@@ -7,14 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-/*
-#twitter-widget-0 {
-  position: fixed !important;
-  bottom: 10px;
-  right: 10px;
-}
-*/
-
 #socialconnections {
   position: fixed;
   bottom: 10px;
@@ -32,7 +24,7 @@ a {
 
 .nav-link a {
   text-decoration: none;
-  color: #5e4c9f;
+  color: #5e4c9f !important;
 }
 
 #rsvp-form {
