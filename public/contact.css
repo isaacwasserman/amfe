@@ -97,7 +97,6 @@ input,select,textarea {
 
 button {
   height: 40px;
-  width: 80px;
   background-color: #5e4c9f;
   border: 2px solid rgba(0,0,0,0.2);
   color: white;

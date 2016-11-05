@@ -34,6 +34,7 @@ body {
   background-color: #dfdfdf;
   z-index: 0;
   width: 50%;
+  height: auto;
   margin: 0 auto;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -47,10 +48,10 @@ body {
 @media(max-width:500px){
   #form-container {
     width: calc(100% - 60px);
-    height: 100%;
     border-radius: 0px;
     margin: 0px;
     padding: 30px;
+    min-height: 100%;
   }
 }
 
@@ -98,7 +99,6 @@ input,select,textarea {
 
 button {
   height: 40px;
-  width: 100px;
   background-color: #5e4c9f;
   border: 2px solid rgba(0,0,0,0.2);
   color: white;

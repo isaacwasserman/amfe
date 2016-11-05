@@ -1,6 +1,6 @@
 <html>
   <head class="no-skrollr">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="latofonts.css"/>
     <link rel="stylesheet" href="main.css"/>
     <title>Alice's March for Equality</title>
@@ -63,6 +63,8 @@
     <div id="mobile-menu">
       <ul>
         <li><a href="/register" target="_blank">Register</a></li>
+        <li><a href="https://teespring.com/stores/alices-march-for-equality" target="_blank">Shop</a></li>
+        <li><a href="/about" target="_blank">About</a></li>
         <li><a href="http://www.alicepaul.org/who-was-alice-paul/" target="_blank">Who's Alice?</a></li>
         <li><a href="http://www.alicepaul.org/newsevents/era-today/" target="_blank">What's the ERA?</a></li>
         <li><a href="/contact" target="_blank">Contact Us</a></li>
@@ -84,14 +86,16 @@
                 <h1 class="nav-link">Register</h1>
               </div>
             </a>
-            <div class="nav-item">
-              <img src="Shop.png" id="pin"/>
-              <h1 class="nav-link">Shop</h1>
-            </div>
+            <a href="https://teespring.com/stores/alices-march-for-equality">
+              <div class="nav-item">
+                <img src="Shop.png" id="pin"/>
+                <h1 class="nav-link">Shop</h1>
+              </div>
+            </a>
             <a href="#rsvp">
             <div class="nav-item">
               <img src="Details.png" id="pin"/>
-              <h1 class="nav-link">Details</h1>
+              <h1 class="nav-link">About</h1>
             </div>
             </a>
           </div>
@@ -116,7 +120,9 @@
     <script type="text/javascript" src="skrollr.min.js"></script>
     <script>
       window.onload = function() {
-		    skrollr.init({forceheight:false});
+        if ($(window).width() > 767) {
+		      skrollr.init({forceheight:false});
+        }
       };
     </script>
   </body>
