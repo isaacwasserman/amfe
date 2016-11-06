@@ -13,7 +13,8 @@
     "express-session": "1.9.x",
     "jade": "1.7.x",
     "underscore": "1.7.x",
-    "google-spreadsheet": "2.0.3"
+    "google-spreadsheet": "2.0.3",
+    "nodemailer": "2.6.x"
   },
   "devDependencies": {
     "node-dev": "2.x.x"
