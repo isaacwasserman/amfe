@@ -16,21 +16,10 @@ body {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  z-index: 100;
+  z-index: 5;
   height: 32px;
   width: 222px;
   overflow: hidden;
-}
-
-@media(max-width:900){
-  #socialconnections {
-    position: absolute;
-    right: auto;
-    left: 10px;
-  }
-  .count-o {
-    display: none !important;
-  }
 }
 
 #twitter-widget-0 {
@@ -98,6 +87,7 @@ a {
     padding: 40px;
     max-width: calc(100% - 80px);
     float: none;
+    padding-bottom: 50px;
   }
   #info {
     width: 1000px;

@@ -2,7 +2,7 @@ async      = require 'async'
 _          = require 'underscore'
 
 nodemailer = require 'nodemailer'
-#transporter = nodemailer.createTransport 'smtps://user%40gmail.com:pass@smtp.gmail.com'
+transporter = nodemailer.createTransport 'smtps://registration%40alicesmarchforequality.com:Kinnock2016@smtp.zoho.com'
 
 GoogleSpreadsheet = require 'google-spreadsheet'
 
@@ -13,7 +13,8 @@ module.exports = (app) ->
     res.render 'home'
     
   app.get '/register', (req, res) ->
-    res.render 'register'
+    res.render 'register', 
+          display: 'none'
   
   app.get '/contact', (req, res) ->
     res.render 'contact'
@@ -66,5 +67,19 @@ module.exports = (app) ->
           cb()
 
       , (err, results) ->
-        res.json 'Did It'
+        res.render 'register', 
+          display: 'block'
+        
+    mailOptions =
+      from: "Alice's March for Equality <registration@alicesmarchforequality.com>"
+      to: email
+      subject: 'Thanks for registering! ' + name + ' 🎉'
+      text: "nonVolunteerMessage"
+      html: "nonVolunteerMessage"
+      
+    transporter.sendMail mailOptions, (error, info) ->
+      if error
+        return console.log(error)
+      console.log 'Message Sent: ' + info.response
+      return
     
