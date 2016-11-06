@@ -232,6 +232,16 @@ li {
   #alicemarchlogomobile {
     display: none;
   }
+  .bkgimage {
+    display: block;
+  }
+}
+
+#bkg-1 .bkgimage {
+  margin: 0 auto;
+  position: absolute;
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
 }
 
 @media (max-width:900px) {
@@ -282,20 +292,6 @@ li {
   width: 100%;
   position: absolute;
   overflow: hidden;
-}
-
-#bkg-1 .bkgimage {
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  -webkit-filter: brightness(0.5);
-  filter: brightness(0.5);
-}
-
-#bkg-2 .bkgimage {
-  margin: 0 auto;
-  display: block;
-  z-index: 2;
 }
 
 #nav-contain {
