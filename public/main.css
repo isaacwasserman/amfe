@@ -18,18 +18,34 @@ body {
   right: 10px;
   z-index: 5;
   height: 32px;
-  width: 222px;
+  width: 264px;
   overflow: hidden;
 }
 
 #twitter-widget-0 {
-  margin-left: 90px;
+  margin-left: 132px;
 }
 
-#twitter-widget-0, .fb-like {
+.fb-like {
+  margin-left: 42px;
+}
+
+#twitter-widget-0, .fb-like, #ig-link {
   height: 100%;
   top: 0px;
   position: absolute !important;
+}
+
+#ig-link {
+  border-radius: 5px;
+  height: 29px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#ig-link:hover {
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
 }
 
 a {

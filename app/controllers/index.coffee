@@ -6,6 +6,7 @@ transporter = nodemailer.createTransport 'smtps://registration%40alicesmarchfore
 
 GoogleSpreadsheet = require 'google-spreadsheet'
 
+emailMessages = require "./emailMessages"
 
 module.exports = (app) ->
   
@@ -17,7 +18,8 @@ module.exports = (app) ->
           display: 'none'
   
   app.get '/contact', (req, res) ->
-    res.render 'contact'
+    res.render 'contact',
+      display: "none"
     
   app.post '/contact', (req, res) ->
     {email, message} = req.body
@@ -40,7 +42,8 @@ module.exports = (app) ->
           cb()
 
       , (err, results) ->
-        res.json 'Did It'
+        res.render 'contact',
+          display: "block"
 
 
   app.post '/register', (req, res) ->
@@ -58,9 +61,9 @@ module.exports = (app) ->
         row =
           timestamp: Date()
           alone_or_group: alone_or_group
-          name: name
+          name: name.toString().replace(",","")
           volunteer: volunteer
-          email: email
+          email: email.toString().replace(",","")
           number_of_people: number_of_people
           
         doc.addRow 1, row, (err) ->
@@ -69,13 +72,20 @@ module.exports = (app) ->
       , (err, results) ->
         res.render 'register', 
           display: 'block'
-        
-    mailOptions =
-      from: "Alice's March for Equality <registration@alicesmarchforequality.com>"
-      to: email
-      subject: 'Thanks for registering! ' + name + ' 🎉'
-      text: "nonVolunteerMessage"
-      html: "nonVolunteerMessage"
+    if volunteer == "no"    
+      mailOptions =
+        from: "Alice's March for Equality <registration@alicesmarchforequality.com>"
+        to: email
+        subject: 'Thanks for registering ' + name.toString().replace(",","").split(" ")[0] + '! 🎉'
+        text: emailMessages.registration.regular.text(name)
+        html: emailMessages.registration.regular.html(name)
+    else
+      mailOptions =
+        from: "Alice's March for Equality <registration@alicesmarchforequality.com>"
+        to: email
+        subject: 'Thanks for registering ' + name.toString().replace(",","").split(" ")[0] + '! 🎉'
+        text: emailMessages.registration.volunteer.text(name)
+        html: emailMessages.registration.volunteer.html(name)
       
     transporter.sendMail mailOptions, (error, info) ->
       if error

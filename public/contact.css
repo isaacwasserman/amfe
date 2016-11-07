@@ -107,3 +107,12 @@ button {
 button:hover {
   background-color: #52428a;
 }
+
+#confirmationbox {
+  width: 100%;
+  background-color: rgba(0,255,0,0.2);
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,255,0,0.5);
+}
