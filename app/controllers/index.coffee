@@ -70,7 +70,7 @@ module.exports = (app) ->
           cb()
 
       , (err, results) ->
-        res.render 'register', 
+        res.render 'home', 
           display: 'block'
     if volunteer == "no"    
       mailOptions =
