@@ -61,12 +61,34 @@ a {
   color: #5e4c9f !important;
 }
 
+@font-face {
+  font-family: 'SharpSans';
+  src: url('fonts/SharpUnity-Extrabold.woff') format('woff');
+}
+
 #rsvp-form {
   width: 450px;
   max-width: 100%;
   float: right;
-  margin: 90px;
-  margin-top: -60px;
+  margin: -60px 90px 90px;
+  background-color: #453a77;
+  font-family: 'SharpSans';
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#poster-square {
+  width: 100%;
+}
+
+.poster-section {
+  height: 80px;
+  color: white !important;
+  margin: 0px;
+  padding-top: 20px;
+  overflow: hidden;
+  font-size: 55px;
+  text-align: center;
 }
 
 #info {
@@ -98,18 +120,27 @@ a {
 
 @media (max-width:1300px) {
   #rsvp-form {
-    width: 90%;
     margin: 0 auto;
-    padding: 40px;
-    max-width: calc(100% - 80px);
     float: none;
-    padding-bottom: 50px;
+    margin-top: 0px;
+    top: 30px;
+    margin-bottom: 30px;
+    position: relative;
   }
   #info {
     width: 1000px;
     margin: 0 auto;
     padding: 40px;
     max-width: calc(100% - 80px);
+  }
+}
+
+@media (max-width:500px) {
+  .poster-section {
+    font-size: 40px;
+    height: 60px;
+    padding-top: 15px;
+    overflow: hidden;
   }
 }
 
@@ -290,6 +321,7 @@ li {
   background-color: #dfdfdf;
   height: auto;
   min-height: 100%;
+  padding-bottom: 55px;
 }
 
 #bkg-3 {
