@@ -39,11 +39,11 @@ window.onload = function() {
       document.getElementById("submitbutton").style.opacity = "1";
       document.getElementById("submitbutton").removeAttribute("disabled");
     }
-    else {
-      emailInput.style.backgroundColor = "rgba(255,0,0,0.2)";
-      document.getElementById("submitbutton").style.opacity = "0.5";
-      document.getElementById("submitbutton").setAttribute("disabled", "true");
-    }
+//    else {
+//      emailInput.style.backgroundColor = "rgba(255,0,0,0.2)";
+//      document.getElementById("submitbutton").style.opacity = "0.5";
+//      document.getElementById("submitbutton").setAttribute("disabled", "true");
+//    }
   }
   
   document.getElementById("registrationtype").addEventListener("change", function(){addRegistrationSection();});
