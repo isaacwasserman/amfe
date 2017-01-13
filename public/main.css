@@ -580,3 +580,14 @@ li {
   margin: 0 auto;
   width: 200px;
 }
+#speakers {
+  position: initial;
+}
+li.speaker {
+  font-size: 24px;
+  font-family: serif;
+  color: dimgrey;
+  display: block;
+  float: left;
+  
+}
