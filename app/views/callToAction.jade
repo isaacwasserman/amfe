@@ -1,0 +1,38 @@
+doctype html5
+html(lang='en')
+  head
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no, maximum-scale=1', media='(device-height: 568px)')
+    link(href="../callToAction.css", rel="stylesheet")
+    title Take Action
+
+  body
+    h1 Take Action
+    h3 Contact your congress people
+    form(method="post", enctype="application/x-www-form-urlencoded", action="/representatives")
+      label Your Zip Code:
+      br
+      input#zipcode(name="zipcode")
+      br
+      input(type="submit")
+    p wait one moment...
+    br
+    label Your representatives:
+    div#representatives
+      ul#house
+        li.houseMember
+          img(src="http://whoismyrepresentative.com/images/40x50/L000554.jpg")
+          p Frank LoBiondo
+      ul#senate
+        li.senator
+          img(src="http://whoismyrepresentative.com/images/40x50/B001288.jpg")
+          p Cory Booker
+        li.senator
+          img(src="http://whoismyrepresentative.com/images/40x50/M000639.jpg")
+          p Robert Menendez
+          
+      div#message
+        p Your Message:
+        form#messageForm(method="post" action="/action")
+          textarea#messageBody I support the ERA and you should to!
+          br
+          input(type="submit")

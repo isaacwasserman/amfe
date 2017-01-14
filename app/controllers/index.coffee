@@ -20,6 +20,10 @@ module.exports = (app) ->
   app.get '/contact', (req, res) ->
     res.render 'contact',
       display: "none"
+      
+  app.get '/action', (req, res) ->
+    res.render 'callToAction',
+      display: "none"
     
   app.post '/contact', (req, res) ->
     {email, message} = req.body
