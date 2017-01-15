@@ -14,7 +14,10 @@
     "jade": "1.7.x",
     "underscore": "1.7.x",
     "google-spreadsheet": "2.0.3",
-    "nodemailer": "2.6.x"
+    "nodemailer": "2.6.x",
+    "request": "2.79.x",
+    "cheerio": "0.22.x",
+    "underscore": "1.7.x"
   },
   "devDependencies": {
     "node-dev": "2.x.x"

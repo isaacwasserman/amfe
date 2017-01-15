@@ -1,6 +1,8 @@
 async      = require 'async'
 _          = require 'underscore'
 
+request = require 'request'
+cheerio = require 'cheerio'
 nodemailer = require 'nodemailer'
 transporter = nodemailer.createTransport 'smtps://registration%40alicesmarchforequality.com:Kinnock2016@smtp.zoho.com'
 
@@ -49,7 +51,34 @@ module.exports = (app) ->
         res.render 'contact',
           display: "block"
 
-
+  app.get '/action', (req, res) ->
+    res.render 'callToAction',
+      display: "none"
+      
+  app.get '/congress/:zipcode', (req, res) ->
+    zipcode = req.params.zipcode
+    url = 'http://whoismyrepresentative.com/search/zip/' + zipcode
+    request url, (error, response, html) ->
+      if !error and response.statusCode == 200
+        $ = cheerio.load(html)
+        memlinks = []
+        $('.mem_link a').each (i, element) ->
+          memlinks.push {'number':i, 'link':$(this).attr('href'), 'name':$(this).text()}
+        
+        contactLinks = []
+        
+        async.map memlinks, ((member)->
+          request (member.link), (error, response, html) ->
+                    if !error and response.statusCode == 200
+                      $ = cheerio.load(html)
+                      photoUrl = $('.photo img').attr('src')
+                      contactUrl = $('#webform a').attr('href')
+                      name = member.name
+                      return [name,contactUrl,photoUrl]
+        ),
+        (err, results)->
+          res.send 'hello'
+    
   app.post '/register', (req, res) ->
     {alone_or_group, name, volunteer, email, number_of_people} = req.body
     doc   = new GoogleSpreadsheet '1XZSHGD2UKKoPx2J6jPVGr1B1BhExroukAh4RE2qzGRo'

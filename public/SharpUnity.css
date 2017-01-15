@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'SharpUnity';
+  src: url('SharpUnity-Extrabold.eot');
+  src: url('SharpUnity-Extrabold.woff2') format('woff2'),
+       url('SharpUnity-Extrabold.woff') format('woff'),
+       url('SharpUnity-Extrabold.ttf') format('truetype'),
+       url('SharpUnity-Extrabold.svg#SharpUnity-Extrabold') format('svg'),
+       url('SharpUnity-Extrabold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
