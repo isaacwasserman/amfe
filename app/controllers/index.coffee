@@ -67,17 +67,18 @@ module.exports = (app) ->
         
         contactLinks = []
         
-        async.map memlinks, ((member)->
+        async.map memlinks, ((member, callback)->
           request (member.link), (error, response, html) ->
                     if !error and response.statusCode == 200
                       $ = cheerio.load(html)
                       photoUrl = $('.photo img').attr('src')
                       contactUrl = $('#webform a').attr('href')
-                      name = member.name
-                      return [name,contactUrl,photoUrl]
+                      name = member.name.replace('MenÃ©ndez', 'Menendez').replace('  ',' ').replace(') ',')')
+                      callback null, {'name':name,'contactUrl':contactUrl,'photoUrl':photoUrl}
+                    
         ),
         (err, results)->
-          res.send 'hello'
+          res.send results
     
   app.post '/register', (req, res) ->
     {alone_or_group, name, volunteer, email, number_of_people} = req.body

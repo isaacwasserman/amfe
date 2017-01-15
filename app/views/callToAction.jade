@@ -3,7 +3,6 @@ html(lang='en')
   head
     meta(name='viewport', content='initial-scale=1.0, user-scalable=no, maximum-scale=1', media='(device-height: 568px)')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
-    script(src="callToAction.js")
     link(href="../SharpUnity.css", rel="stylesheet")
     link(href="../callToAction.css", rel="stylesheet")
     title Take Action
@@ -18,23 +17,7 @@ html(lang='en')
         input#zipcode(name="zipcode")
         br
         input(type="submit" value="Go" onclick="findReps()")
-      div#representatives
-        p Your representatives:
-        ul#house
-          li.houseMember
-            img(src="http://whoismyrepresentative.com/images/40x50/L000554.jpg")
-            p Frank LoBiondo
-        ul#senate
-          li.senator
-            img(src="http://whoismyrepresentative.com/images/40x50/B001288.jpg")
-            p Cory Booker
-          li.senator
-            img(src="http://whoismyrepresentative.com/images/40x50/M000639.jpg")
-            p Robert Menendez
-
-        div#message
-          p Your Message:
-          form#messageForm(method="post" action="/action")
-            textarea#messageBody I support the ERA and you should to!
-            br
-            input(type="submit")
+      div#congress
+        p#congressTitle Your members of congress:
+        ul#congressList
+    script(src="callToAction.js")

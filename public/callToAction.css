@@ -1,7 +1,7 @@
 body {
 /*  background-color: #5e4c9f;*/
   background-color: #6A3FB3;
-  color: white;
+  color: white !important;
   font-family: 'SharpUnity', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -48,8 +48,8 @@ input[type="submit"] {
   font-family: 'SharpUnity';
   font-size: 15px;
   background-color: white;
-  height: 30px;
-  width: 60px;
+  height: 40px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   margin: 5px 0px;
@@ -58,7 +58,38 @@ input[type="submit"] {
   appearance:         none;
 }
 
-#representatives {
-  display: none;
+#congressTitle {
+  margin-left: 10px;
 }
 
+#congress {
+  margin: 100px auto;
+  width: 100%;
+}
+
+#congressList {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#congressList li {
+  height: 80px;
+  margin: 10px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#congressList li img {
+  height: 100%;
+  float: left;
+  border-radius: 5px;
+}
+
+#congressList li p {
+  float: right;
+  max-width: 75%;
+  margin: 5px;
+  color: white;
+}
