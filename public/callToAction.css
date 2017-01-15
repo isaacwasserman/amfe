@@ -65,6 +65,7 @@ input[type="submit"] {
 #congress {
   margin: 100px auto;
   width: 100%;
+  max-width: 500px;
 }
 
 #congressList {
