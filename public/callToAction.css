@@ -83,12 +83,6 @@ input[type="submit"] {
   border-radius: 5px;
 }
 
-#congressList li img {
-  height: 100%;
-  float: left;
-  border-radius: 5px;
-}
-
 #congressList li p {
   float: right;
   width: calc(100% - 80px);

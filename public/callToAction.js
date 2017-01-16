@@ -33,5 +33,3 @@ var findReps = function(altZip){
     });
   });
 }
-
-findReps('08302');
