@@ -17,17 +17,21 @@ var findReps = function(altZip){
       
       var congressPersonP = document.createElement('P');
 //      var nameNode = createTextNode(rep.name);
-      congressPersonP.innerHTML = rep.name;
+      congressPersonP.innerHTML = rep.name + "<br>";
       
       var congressPersonWholeLink = document.createElement('A');
-      congressPersonWholeLink.setAttribute('href',rep.contactUrl)
+      congressPersonWholeLink.setAttribute('href',rep.contactUrl);
+      
+      var clickToContact = document.createElement('SPAN');
+      clickToContact.innerHTML = "Click To Contact"
       
       congressPersonItem.appendChild(congressPersonImg);
       congressPersonItem.appendChild(congressPersonP);
+      congressPersonItem.appendChild(clickToContact);
       congressPersonWholeLink.appendChild(congressPersonItem)
       congressList.appendChild(congressPersonWholeLink);
     });
   });
 }
 
-//findReps('08302');
+findReps('08302');
