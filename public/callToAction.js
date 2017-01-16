@@ -30,6 +30,8 @@ var findReps = function(altZip){
       congressPersonItem.appendChild(clickToContact);
       congressPersonWholeLink.appendChild(congressPersonItem)
       congressList.appendChild(congressPersonWholeLink);
+      
+      $('#congressTitle').css('display','initial');
     });
   });
 }

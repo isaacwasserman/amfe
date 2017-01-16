@@ -61,6 +61,7 @@ input[type="submit"] {
 
 #congressTitle {
   margin-left: 10px;
+  display: none;
 }
 
 #congress {
@@ -80,6 +81,12 @@ input[type="submit"] {
   margin: 10px;
   background-color: rgba(255,255,255,0.1);
   padding: 10px;
+  border-radius: 5px;
+}
+
+#congressList li img {
+  height: 100%;
+  float: left;
   border-radius: 5px;
 }
 
