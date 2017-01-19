@@ -249,6 +249,35 @@ li {
   margin-top: 40%;
 }
 
+#mobileActionButton {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10%;
+  height: 50px;
+  border: solid 2px #00cc55;
+  background-color: #23a821;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none !important;
+  z-index: 1000;
+  display: block;
+}
+
+/*
+@media (min-width:900px) {
+  #nav-contain {
+    display: none;
+  }
+}
+*/
+
 #scrollarrowcontain {
   height: 100px;
   width: 100%;
